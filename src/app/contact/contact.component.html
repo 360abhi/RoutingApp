@@ -3,16 +3,39 @@
 <div class="p-2 font-bold text-4xl text-center bg-blue-600 ">
     <h2>Our World Class Developers</h2>
 </div>
-<div class="flex flex-wrap p-4 justify-around">
+<div class="flex flex-wrap p-4 gap-2 justify-around">
     <div class="card w-72 bg-base-100 shadow-xl image-full" *ngFor="let contact of contacts" > 
         <figure><img src = {{contact.imageUrl}} class="grayscale" alt="Shoes" /></figure>
         <div class="card-body">
-            <h2 class="card-title mt-56 text-3xl">{{contact.name}}</h2>
-            <p class="text-xl">{{contact.role}}</p>
+            <h2 #name class="card-title mt-56 text-3xl">{{contact.name}}</h2>
+            <p #phone class="hidden">{{contact.phone}}</p>
+            <p #email class="hidden">{{contact.email}}</p>
+            <p #role class="text-xl">{{contact.role}}</p>
             <div class="card-actions justify-end">
-                <button class="btn btn-primary">Contact</button>
+                <button class="btn btn-primary" (click)="btnClicked(name.innerText,role.innerText,email.innerText,phone.innerText)">Contact</button>
             </div>
         </div>
     </div>
+</div> 
+
+
+<div  *ngIf="isSelected" class="p-4 w-[500px] text-2xl font-medium mx-auto flex-col h-full justify-start gap-2">
+    <input type="text" id="disabled-input" aria-label="disabled input" class="mb-6 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" value="Name : {{name}}" disabled>
+    <input type="text" id="disabled-input" aria-label="disabled input" class="mb-6 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" value="Role : {{role}}" disabled>
+    <input type="text" id="disabled-input" aria-label="disabled input" class="mb-6 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" value="Email address : {{email}}" disabled>
+    <input type="text" id="disabled-input" aria-label="disabled input" class="mb-6 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" value="Phone number : {{phone}}" disabled>
+    <input type="text" id="disabled-input" aria-label="disabled input" class="mb-6 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="your message" >
+    <button  class="btn btn-primary" (click)="sendMessage()" >Send Message</button>
 </div>
+<div id="target" class="absolute top-[150vh]">
+
+</div>
+
+<div *ngIf="successmsg" class="alert alert-success shadow-lg w-[500px] mx-auto my-8">
+    <div class="px-4">
+      <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 text-xl h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+      <span>Your message has been sent</span>
+    </div>
+  </div>
+
 
