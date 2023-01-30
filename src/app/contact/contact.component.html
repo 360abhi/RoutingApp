@@ -1,43 +1,16 @@
 
 
-<div class="flex flex-wrap ">
-    <div class="card w-52 bg-base-100 shadow-xl image-full">
-        <figure><img src="../../assets/ankit.jpg" class="grayscale" alt="Shoes" /></figure>
+<div class="p-2 font-bold text-4xl text-center bg-blue-600 ">
+    <h2>Our World Class Developers</h2>
+</div>
+<div class="flex flex-wrap p-4 justify-around">
+    <div class="card w-72 bg-base-100 shadow-xl image-full" *ngFor="let contact of contacts" > 
+        <figure><img src = {{contact.imageUrl}} class="grayscale" alt="Shoes" /></figure>
         <div class="card-body">
-            <h2 class="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
+            <h2 class="card-title mt-56 text-3xl">{{contact.name}}</h2>
+            <p class="text-xl">{{contact.role}}</p>
             <div class="card-actions justify-end">
-                <button class="btn btn-primary">Buy Now</button>
-            </div>
-        </div>
-    </div>
-    <div class="card w-80 bg-base-100 shadow-xl image-full">
-        <figure><img src="../../assets/ankit.jpg" class="grayscale" alt="Shoes" /></figure>
-        <div class="card-body">
-            <h2 class="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-                <button class="btn btn-primary">Buy Now</button>
-            </div>
-        </div>
-    </div>
-    <div class="card w-80 bg-base-100 shadow-xl image-full">
-        <figure><img src="../../assets/ankit.jpg" class="grayscale" alt="Shoes" /></figure>
-        <div class="card-body">
-            <h2 class="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-                <button class="btn btn-primary">Buy Now</button>
-            </div>
-        </div>
-    </div>
-    <div class="card w-80 bg-base-100 shadow-xl image-full">
-        <figure><img src="../../assets/ankit.jpg" class="grayscale" alt="Shoes" /></figure>
-        <div class="card-body">
-            <h2 class="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-                <button class="btn btn-primary">Buy Now</button>
+                <button class="btn btn-primary">Contact</button>
             </div>
         </div>
     </div>
