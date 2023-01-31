@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-projectideas',
@@ -18,6 +18,10 @@ export class ProjectideasComponent {
       name:target
     } )
     this.myname = '';
+  }
+
+  removeProject(index: number) : void{
+    this.projects.splice(index,1);
   }
 
 }
