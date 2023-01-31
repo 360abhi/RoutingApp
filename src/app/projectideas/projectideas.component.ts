@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class ProjectideasComponent {
 
   
- projects: {name: String;}[] = [];
+ projects: {name: String}[] = [];
 
  myname : string = "";
   
