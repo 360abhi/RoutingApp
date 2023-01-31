@@ -32,7 +32,9 @@ const appRoutes: Routes = [
     HomeComponent,
     ProjectideasComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, RouterModule.forRoot(appRoutes), FormsModule],
+  imports: [BrowserModule, AppRoutingModule, RouterModule.forRoot(appRoutes,{
+    scrollPositionRestoration: 'enabled'
+  }), FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
