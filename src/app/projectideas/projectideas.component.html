@@ -1,0 +1,40 @@
+<div class="w-1/2 mx-auto mb-10 mt-5">
+
+    
+        
+        <div class="flex items-center px-3 py-2 rounded-lg bg-gray-50 dark:bg-gray-700">
+
+            <input id="chat" rows="1" #target
+                class="block mx-4 p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Your idea..." [(ngModel)]="myname">
+            <button class="btn btn-accent py-1" (click)="addProject(target.value);  ">Add</button>
+        </div>
+    
+</div>
+
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table class="w-1/2  text-sm text-left mx-auto text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
+                    Project Name
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Remove
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="border-b border-gray-200 dark:border-gray-700" 
+                        *ngFor="let project of projects">
+                <th scope="row"
+                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800">
+                    {{project.name}}
+                </th>
+                <td class="px-6 py-4">
+                    <button class="btn btn-warning">Remove</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
