@@ -1,27 +1,31 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-projectideas',
   templateUrl: './projectideas.component.html',
-  styleUrls: ['./projectideas.component.css']
+  styleUrls: ['./projectideas.component.css'],
 })
 export class ProjectideasComponent {
 
-  
- projects: {name: String}[] = [];
+  constructor(private router: Router){}
 
- myname : string = "";
-  
+  projects: { name: String }[] = [];
 
-  addProject(target : any) : void {
-    this.projects.push( {
-      name:target
-    } )
+  myname: string = '';
+
+  addProject(target: any): void {
+    this.projects.push({
+      name: target,
+    });
     this.myname = '';
+
+    if (this.projects.length > 3) {
+      this.router.navigate(['/services'])
+    }
   }
 
-  removeProject(index: number) : void{
-    this.projects.splice(index,1);
+  removeProject(index: number): void {
+    this.projects.splice(index, 1);
   }
-
 }
