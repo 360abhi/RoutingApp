@@ -11,6 +11,10 @@ import { Route, RouterModule, Routes } from '@angular/router';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { HomeComponent } from './home/home.component';
 import { ProjectideasComponent } from './projectideas/projectideas.component';
+import { MyservicesComponent } from './myservices/myservices.component';
+import { MyServices } from './Services/myservices.service';
+
+
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,6 +23,7 @@ const appRoutes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path : 'projectideas', component : ProjectideasComponent},
+  { path: 'services', component: MyservicesComponent},
   { path: '**', component: PagenotfoundComponent },
 ];
 
@@ -31,6 +36,8 @@ const appRoutes: Routes = [
     PagenotfoundComponent,
     HomeComponent,
     ProjectideasComponent,
+    MyservicesComponent,
+ 
   ],
   imports: [BrowserModule, AppRoutingModule, RouterModule.forRoot(appRoutes,{
     scrollPositionRestoration: 'enabled'

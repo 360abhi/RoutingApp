@@ -1,0 +1,24 @@
+<div class="bg-gray-900">
+<div class="card bg-gray-900 rounded-none p-2 lg:card-side shadow-xl" *ngFor="let service of services">
+    <figure class="basis-5/6"><img src={{service.imageUrl}} alt="Album" /></figure>
+    <div class="card-body text-gray-50 ">
+        <h2 class="card-title text-4xl mb-5">{{service.heading}}</h2>
+        <p class="text-xl">{{service.about}}</p>
+        <div class="card-actions justify-end">
+            <button class="btn btn-primary">Reviews</button>
+        </div>
+    </div>
+
+</div>
+<!-- <ng-container *ngIf="ifClicked">
+    <div class="chat chat-start">
+        <div class="chat-image avatar">
+            <div class="w-10 rounded-full">
+                <img src="../../assets/chat.png" />
+            </div>
+        </div>
+        <div class="chat-bubble">Delivered website earlier than expected</div>
+    </div>
+</ng-container> -->
+
+</div>
