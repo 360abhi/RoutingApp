@@ -13,6 +13,9 @@ import { HomeComponent } from './home/home.component';
 import { ProjectideasComponent } from './projectideas/projectideas.component';
 import { MyservicesComponent } from './myservices/myservices.component';
 import { MyServices } from './Services/myservices.service';
+import { WebdevComponent } from './myservices/webdev/webdev.component';
+import { AppdevComponent } from './myservices/appdev/appdev.component';
+import { ConsultancyComponent } from './myservices/consultancy/consultancy.component';
 
 
 
@@ -23,7 +26,12 @@ const appRoutes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path : 'projectideas', component : ProjectideasComponent},
-  { path: 'services', component: MyservicesComponent},
+  { path: 'services' ,children:[
+    {path : '',component : MyservicesComponent},
+    {path: 'webdev',component : WebdevComponent},
+    {path: 'appdev',component : AppdevComponent},
+    {path: 'consultancy',component : ConsultancyComponent},
+  ]},
   { path: '**', component: PagenotfoundComponent },
 ];
 
@@ -37,7 +45,10 @@ const appRoutes: Routes = [
     HomeComponent,
     ProjectideasComponent,
     MyservicesComponent,
- 
+    WebdevComponent,
+    AppdevComponent,
+    ConsultancyComponent,
+
   ],
   imports: [BrowserModule, AppRoutingModule, RouterModule.forRoot(appRoutes,{
     scrollPositionRestoration: 'enabled'
