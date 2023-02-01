@@ -1,14 +1,13 @@
 <div class="bg-gray-900">
-<div class="card bg-gray-900 rounded-none p-2 lg:card-side shadow-xl" *ngFor="let service of services">
-    <figure class="basis-5/6"><img src={{service.imageUrl}} alt="Album" /></figure>
-    <div class="card-body text-gray-50 ">
+<div class="card bg-gray-900 bg-cover rounded-none p-2 lg:card-side shadow-xl" *ngFor="let service of services">
+    <figure class="basis-3/6"><img src={{service.imageUrl}} class="h-[300px]" alt="Album" /></figure>
+    <div class="flex basis-3/6 flex-col gap-3 px-4 text-gray-50 ">
         <h2 class="card-title text-4xl mb-5">{{service.heading}}</h2>
         <p class="text-xl">{{service.about}}</p>
-        <div class="card-actions justify-end">
-            <button class="btn btn-primary">Reviews</button>
+        <div class=" ml-auto mr-4">
+            <a routerLink={{service.status}}><button class="btn btn-primary px-6">Know More</button></a>
         </div>
     </div>
-
 </div>
 <!-- <ng-container *ngIf="ifClicked">
     <div class="chat chat-start">
